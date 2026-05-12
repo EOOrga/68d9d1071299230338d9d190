@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06152E">
+  <title>BESNARD CHRISTIAN</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="favicon.png">
+  <style>
+    :root {
+      --navy: #06152e;
+      --blue: #0a7bc2;
+      --cyan: #14c9e8;
+      --green: #168a63;
+      --amber: #e69f2e;
+      --paper: #f4f8fb;
+      --ink: #172033;
+      --muted: #607182;
+      --line: #dbe7ef;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.5;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px clamp(16px, 4vw, 56px);
+      color: #fff;
+      background: rgba(6, 21, 46, 0.86);
+      backdrop-filter: blur(14px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .brand img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+
+    .nav a {
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 8px;
+      padding: 9px 12px;
+      font-weight: 800;
+    }
+
+    .hero {
+      min-height: 74vh;
+      display: grid;
+      align-items: end;
+      padding: 100px clamp(18px, 5vw, 72px) 48px;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(6,21,46,0.96) 0%, rgba(6,21,46,0.78) 42%, rgba(6,21,46,0.18) 100%),
+        url("featured.png") center / cover no-repeat;
+    }
+
+    .hero-content { max-width: 680px; }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.3rem, 7vw, 5.8rem);
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 18px 0 24px;
+      color: #d5e4ef;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-weight: 900;
+      background: var(--cyan);
+      color: #042033;
+    }
+
+    .button.secondary {
+      color: #fff;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.32);
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 34px clamp(16px, 4vw, 32px) 56px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin: 10px 0 18px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      letter-spacing: 0;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 480px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      min-height: 190px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .card strong {
+      display: block;
+      margin: 12px 0 6px;
+      font-size: 1.05rem;
+    }
+
+    .icon {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 8px;
+      color: var(--navy);
+      background: rgba(20,201,232,0.18);
+      font-weight: 900;
+    }
+
+    .workflow {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .panel {
+      padding: 22px;
+      border-radius: 8px;
+      color: #fff;
+      background: var(--navy);
+    }
+
+    .panel p { color: #c8d8e8; }
+
+    .steps {
+      display: grid;
+      gap: 10px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .step span {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border-radius: 8px;
+      background: rgba(230,159,46,0.2);
+      color: #79500c;
+      font-weight: 900;
+    }
+
+    footer {
+      padding: 24px clamp(16px, 4vw, 56px);
+      color: #c8d8e8;
+      background: var(--navy);
+    }
+
+    @media (max-width: 820px) {
+      .grid, .workflow { grid-template-columns: 1fr; }
+      .hero { min-height: 70vh; background-position: 58% center; }
+      .section-title { display: block; }
+      .nav a { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">
+      <img src="favicon.png" alt="">
+      <span>BESNARD CHRISTIAN</span>
+    </div>
+    <a href="mailto:support@besnardchristian.app">Contact</a>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>BESNARD CHRISTIAN</h1>
+      <p>Operations tracking for quality control checklists, equipment checkout, shipment logs, and compliance reporting, stored locally on the Android device.</p>
+      <div class="button-row">
+        <a class="button" href="#workflow">View workflow</a>
+        <a class="button secondary" href="mailto:support@besnardchristian.app">Support</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="section-title">
+      <h2>Daily Control Areas</h2>
+      <p>Focused screens help teams create records, update status, and review outstanding operational tasks.</p>
+    </div>
+
+    <section class="grid" aria-label="Core app areas">
+      <article class="card">
+        <div class="icon">QC</div>
+        <strong>Quality control</strong>
+        <p>Build repeatable inspection records with owners, due windows, progress, and notes.</p>
+      </article>
+      <article class="card">
+        <div class="icon">EQ</div>
+        <strong>Equipment checkout</strong>
+        <p>Track tools and equipment with references, current status, and return follow-up.</p>
+      </article>
+      <article class="card">
+        <div class="icon">SL</div>
+        <strong>Shipment log</strong>
+        <p>Keep dispatch handoff notes, shipment references, and blocked items visible.</p>
+      </article>
+      <article class="card">
+        <div class="icon">CR</div>
+        <strong>Compliance reporting</strong>
+        <p>Review readiness signals and add evidence snapshots for internal closeout.</p>
+      </article>
+    </section>
+
+    <section class="workflow" id="workflow">
+      <div class="panel">
+        <h2>Built for local operations</h2>
+        <p>The Android app works without accounts, analytics, cloud sync, or external APIs. Records stay in local app storage until the user clears app data or uninstalls the app.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><span>1</span><div><strong>Create a record</strong><br>Select quality, equipment, shipment, or compliance and assign an owner.</div></div>
+        <div class="step"><span>2</span><div><strong>Update progress</strong><br>Track status, due windows, and evidence notes as work moves forward.</div></div>
+        <div class="step"><span>3</span><div><strong>Review reports</strong><br>Use dashboard and reporting views to identify completion, review items, and workload by area.</div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    BESNARD CHRISTIAN · support@besnardchristian.app
+  </footer>
+</body>
+</html>

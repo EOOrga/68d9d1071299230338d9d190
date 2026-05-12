@@ -1,0 +1,33 @@
+{
+  "name": "BESNARD CHRISTIAN",
+  "short_name": "BESNARD",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#F4F8FB",
+  "theme_color": "#06152E",
+  "description": "Local operations tracking for quality control, equipment, shipments, and compliance.",
+  "icons": [
+    {
+      "src": "icons/Icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/Icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/Icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/Icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
