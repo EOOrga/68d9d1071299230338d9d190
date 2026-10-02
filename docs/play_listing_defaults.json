@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "applications": {
+    "com.taziggg100.besnardchristian": {
+      "title": "BESNARD CHRISTIAN",
+      "short_description": "Track quality checks, equipment, shipments, and compliance records locally.",
+      "full_description": "BESNARD CHRISTIAN helps operations teams keep daily business controls organized without accounts or cloud sync. The app combines quality control checklists, equipment checkout tracking, shipment logs, and compliance reporting in one focused mobile workspace.\n\nCreate local records, assign responsible people, track due windows, update progress, and review status from dashboard and reporting views. Records stay on the device so teams can manage routine operational evidence with a simple, repeatable workflow.",
+      "source_screenshots": [
+        "docs/screens/1.png",
+        "docs/screens/2.png",
+        "docs/screens/3.png"
+      ],
+      "generated_from": "existing repository listing metadata and README",
+      "generated_at": "2026-10-02T21:22:44.232934+00:00"
+    }
+  }
+}
