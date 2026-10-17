@@ -1,0 +1,3 @@
+BESNARD CHRISTIAN helps operations teams keep daily business controls organized without accounts or cloud sync. The app combines quality control checklists, equipment checkout tracking, shipment logs, and compliance reporting in one focused mobile workspace.
+
+Create local records, assign responsible people, track due windows, update progress, and review status from dashboard and reporting views. Records stay on the device so teams can manage routine operational evidence with a simple, repeatable workflow.
