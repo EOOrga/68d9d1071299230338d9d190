@@ -28,7 +28,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.othmangoldcar.rentcar"
+        applicationId = "com.xtkaxtvgnrlq.besnardchristian"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
