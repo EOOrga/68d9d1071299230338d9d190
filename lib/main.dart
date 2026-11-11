@@ -390,7 +390,7 @@ class _OperationsShellState extends State<OperationsShell> {
     final record = OperationRecord(
       id: 'record-${now.microsecondsSinceEpoch}',
       type: RecordType.shipment,
-      title: 'Weekly fleet readiness check',
+      title: 'OTHMAN GOLD CAR',
       owner: 'Fleet manager',
       reference: 'INS-${now.month}${now.day}',
       status: RecordStatus.inProgress,
