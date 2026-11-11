@@ -1,6 +1,6 @@
 using $gpc-app-builder  create this app
-app title: BESNARD CHRISTIAN
-app idea: An operations-focused app offering quality control checklist, equipment checkout, shipment log, and compliance reporting to streamline daily business tasks.
-company name: BESNARD CHRISTIAN
-email address: [email to be provided later]
+app title: OTHMAN GOLD CAR
+app idea: A car rental management app for the company offering a vehicle fleet catalog, booking and reservation management, rental contract tracking, vehicle check-in/check-out inspection checklists, and customer records to streamline daily car rental operations.
+company name: OTHMAN GOLD CAR
+email address: contact@othmangoldcar.site
 the two icon and featured graphics contained in docs folder

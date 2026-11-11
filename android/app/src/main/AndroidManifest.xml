@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="BESNARD CHRISTIAN"
+        android:label="OTHMAN GOLD CAR"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

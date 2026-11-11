@@ -4,24 +4,24 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const bool _screenshotMode = bool.fromEnvironment('SCREENSHOT_MODE');
-const String appName = 'BESNARD CHRISTIAN';
-const String supportEmail = 'support@besnardchristian.app';
+const String appName = 'OTHMAN GOLD CAR';
+const String supportEmail = 'contact@othmangoldcar.site';
 
-const Color _navy = Color(0xFF06152E);
-const Color _blue = Color(0xFF0A7BC2);
-const Color _cyan = Color(0xFF14C9E8);
-const Color _green = Color(0xFF168A63);
-const Color _amber = Color(0xFFE69F2E);
+const Color _navy = Color(0xFF15120A);
+const Color _blue = Color(0xFFC9A227);
+const Color _cyan = Color(0xFFE0B84A);
+const Color _green = Color(0xFF2E7D4F);
+const Color _amber = Color(0xFFE09F3E);
 const Color _red = Color(0xFFC75343);
-const Color _paper = Color(0xFFF4F8FB);
-const Color _ink = Color(0xFF172033);
+const Color _paper = Color(0xFFF7F4EC);
+const Color _ink = Color(0xFF241C0E);
 
 void main() {
-  runApp(const BesnardChristianApp(screenshotMode: _screenshotMode));
+  runApp(const OthmanGoldCarApp(screenshotMode: _screenshotMode));
 }
 
-class BesnardChristianApp extends StatelessWidget {
-  const BesnardChristianApp({super.key, required this.screenshotMode});
+class OthmanGoldCarApp extends StatelessWidget {
+  const OthmanGoldCarApp({super.key, required this.screenshotMode});
 
   final bool screenshotMode;
 
@@ -99,39 +99,39 @@ extension RecordTypeText on RecordType {
   String get label {
     switch (this) {
       case RecordType.quality:
-        return 'Quality control';
+        return 'Reservation';
       case RecordType.equipment:
-        return 'Equipment checkout';
+        return 'Rental contract';
       case RecordType.shipment:
-        return 'Shipment log';
+        return 'Vehicle inspection';
       case RecordType.compliance:
-        return 'Compliance report';
+        return 'Customer record';
     }
   }
 
   String get shortLabel {
     switch (this) {
       case RecordType.quality:
-        return 'Quality';
+        return 'Booking';
       case RecordType.equipment:
-        return 'Equipment';
+        return 'Contract';
       case RecordType.shipment:
-        return 'Shipment';
+        return 'Inspection';
       case RecordType.compliance:
-        return 'Compliance';
+        return 'Customer';
     }
   }
 
   IconData get icon {
     switch (this) {
       case RecordType.quality:
-        return Icons.fact_check_outlined;
+        return Icons.event_available_outlined;
       case RecordType.equipment:
-        return Icons.precision_manufacturing_outlined;
+        return Icons.description_outlined;
       case RecordType.shipment:
-        return Icons.local_shipping_outlined;
+        return Icons.directions_car_outlined;
       case RecordType.compliance:
-        return Icons.verified_user_outlined;
+        return Icons.badge_outlined;
     }
   }
 }
@@ -142,13 +142,13 @@ extension RecordStatusText on RecordStatus {
   String get label {
     switch (this) {
       case RecordStatus.open:
-        return 'Open';
+        return 'Pending';
       case RecordStatus.inProgress:
-        return 'In progress';
+        return 'Active';
       case RecordStatus.blocked:
         return 'Needs review';
       case RecordStatus.complete:
-        return 'Complete';
+        return 'Completed';
     }
   }
 
@@ -267,7 +267,7 @@ class OperationRecord {
 }
 
 class RecordStore {
-  static const String _storageKey = 'besnard_operations_records_v1';
+  static const String _storageKey = 'othman_gold_car_records_v1';
 
   Future<List<OperationRecord>> load() async {
     final prefs = await SharedPreferences.getInstance();
@@ -389,14 +389,14 @@ class _OperationsShellState extends State<OperationsShell> {
     final now = DateTime.now();
     final record = OperationRecord(
       id: 'record-${now.microsecondsSinceEpoch}',
-      type: RecordType.compliance,
-      title: 'Weekly compliance readiness',
-      owner: 'Operations lead',
-      reference: 'CMP-${now.month}${now.day}',
+      type: RecordType.shipment,
+      title: 'Weekly fleet readiness check',
+      owner: 'Fleet manager',
+      reference: 'INS-${now.month}${now.day}',
       status: RecordStatus.inProgress,
       dueDate: now.add(const Duration(days: 5)),
       notes:
-          'Verify training files, shipment evidence, and equipment logs before sign-off.',
+          'Verify insurance, service logs, cleaning, and fuel levels before the next rentals.',
       completion: 64,
       createdAt: now,
     );
@@ -525,13 +525,13 @@ class DashboardScreen extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
       children: [
         _HeaderPanel(
-          title: 'Operations control',
+          title: 'Rental control',
           subtitle:
-              'Track daily checks, tools, shipments, and audit evidence in one local log.',
+              'Track bookings, contracts, vehicle inspections, and customers in one local log.',
           action: FilledButton.icon(
             onPressed: () => onCreate(RecordType.quality),
             icon: const Icon(Icons.add_task),
-            label: const Text('Create check'),
+            label: const Text('New booking'),
           ),
         ),
         const SizedBox(height: 16),
@@ -565,10 +565,10 @@ class DashboardScreen extends StatelessWidget {
                 color: _green,
               ),
               MetricCard(
-                label: 'Shipments',
+                label: 'Bookings',
                 value:
-                    '${records.where((r) => r.type == RecordType.shipment).length}',
-                icon: Icons.local_shipping_outlined,
+                    '${records.where((r) => r.type == RecordType.quality).length}',
+                icon: Icons.event_available_outlined,
                 color: _amber,
               ),
             ],
@@ -596,7 +596,7 @@ class DashboardScreen extends StatelessWidget {
               icon: Icons.task_alt_outlined,
               title: 'No local records yet',
               message:
-                  'Create your first checklist, checkout, shipment entry, or compliance note.',
+                  'Create your first booking, rental contract, vehicle inspection, or customer record.',
             )
           else
             ...nextRecords.map(
@@ -728,9 +728,9 @@ class ReportsScreen extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
       children: [
         _HeaderPanel(
-          title: 'Compliance snapshot',
+          title: 'Fleet readiness',
           subtitle:
-              'Review local readiness signals before an internal audit or shipment closeout.',
+              'Review local readiness signals before vehicle handover or contract closeout.',
           action: OutlinedButton.icon(
             onPressed: onAddSnapshot,
             icon: const Icon(Icons.add_chart_outlined),
@@ -993,7 +993,7 @@ class _RecordFormScreenState extends State<RecordFormScreen> {
   int _dueInDays = 3;
   int _completion = 20;
   final _title = TextEditingController();
-  final _owner = TextEditingController(text: 'Operations lead');
+  final _owner = TextEditingController(text: 'Rental agent');
   final _reference = TextEditingController();
   final _notes = TextEditingController();
 
@@ -1009,7 +1009,7 @@ class _RecordFormScreenState extends State<RecordFormScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('New operation record')),
+      appBar: AppBar(title: const Text('New rental record')),
       body: Form(
         key: _formKey,
         child: ListView(
@@ -1042,7 +1042,7 @@ class _RecordFormScreenState extends State<RecordFormScreen> {
               controller: _reference,
               textInputAction: TextInputAction.next,
               decoration: const InputDecoration(
-                labelText: 'Asset, shipment, or checklist ID',
+                labelText: 'Vehicle plate, booking, or contract ID',
               ),
               validator: (value) => value == null || value.trim().isEmpty
                   ? 'Add a reference'
@@ -1053,7 +1053,7 @@ class _RecordFormScreenState extends State<RecordFormScreen> {
               controller: _owner,
               textInputAction: TextInputAction.next,
               decoration: const InputDecoration(
-                labelText: 'Responsible person',
+                labelText: 'Responsible agent',
               ),
               validator: (value) =>
                   value == null || value.trim().isEmpty ? 'Add an owner' : null,
@@ -1108,7 +1108,7 @@ class _RecordFormScreenState extends State<RecordFormScreen> {
               minLines: 3,
               maxLines: 5,
               decoration: const InputDecoration(
-                labelText: 'Notes and evidence',
+                labelText: 'Notes and details',
               ),
               validator: (value) => value == null || value.trim().isEmpty
                   ? 'Add a short note'
@@ -1602,13 +1602,13 @@ class _IconBadge extends StatelessWidget {
 Color _typeColor(RecordType type) {
   switch (type) {
     case RecordType.quality:
-      return _cyan;
-    case RecordType.equipment:
       return _blue;
-    case RecordType.shipment:
+    case RecordType.equipment:
       return _amber;
-    case RecordType.compliance:
+    case RecordType.shipment:
       return _green;
+    case RecordType.compliance:
+      return _cyan;
   }
 }
 
@@ -1634,54 +1634,54 @@ List<OperationRecord> _sampleRecords() {
   final today = DateTime(2026, 5, 12);
   return [
     OperationRecord(
-      id: 'sample-qc',
+      id: 'sample-booking',
       type: RecordType.quality,
-      title: 'Packaging line QC checklist',
+      title: 'Toyota Land Cruiser booking',
       owner: 'Amelia Martin',
-      reference: 'QC-1842',
+      reference: 'BK-1842',
       status: RecordStatus.inProgress,
       dueDate: today.add(const Duration(days: 1)),
       notes:
-          'Inspect seal integrity, barcode legibility, and final carton count before dispatch.',
+          'Confirm pickup time, driver license, deposit, and preferred insurance option.',
       completion: 68,
       createdAt: today.subtract(const Duration(days: 1)),
     ),
     OperationRecord(
-      id: 'sample-eq',
+      id: 'sample-contract',
       type: RecordType.equipment,
-      title: 'Torque driver checkout',
+      title: 'Rental contract — Mercedes S-Class',
       owner: 'Nicolas Bernard',
-      reference: 'EQ-77',
+      reference: 'CT-77',
       status: RecordStatus.open,
       dueDate: today.add(const Duration(days: 3)),
       notes:
-          'Confirm calibration label, issue to station B, and record expected return window.',
+          'Prepare agreement, mileage limit, return date, and signature before handover.',
       completion: 25,
       createdAt: today,
     ),
     OperationRecord(
-      id: 'sample-ship',
+      id: 'sample-inspection',
       type: RecordType.shipment,
-      title: 'Outbound shipment LX-290',
+      title: 'Check-out inspection — Range Rover',
       owner: 'Claire Dubois',
-      reference: 'LX-290',
+      reference: 'RR-290',
       status: RecordStatus.blocked,
       dueDate: today.add(const Duration(days: 2)),
       notes:
-          'Carrier pickup is pending final pallet photo and damage-free handoff confirmation.',
+          'Handover pending fuel top-up, exterior photos, and tyre condition confirmation.',
       completion: 52,
       createdAt: today.subtract(const Duration(days: 2)),
     ),
     OperationRecord(
-      id: 'sample-comp',
+      id: 'sample-customer',
       type: RecordType.compliance,
-      title: 'Quarterly safety evidence pack',
-      owner: 'Operations lead',
-      reference: 'CMP-Q2',
+      title: 'Corporate customer — Gold account',
+      owner: 'Rental agent',
+      reference: 'CUS-Q2',
       status: RecordStatus.complete,
       dueDate: today.add(const Duration(days: 6)),
       notes:
-          'Training roster, incident log review, and sign-off notes are ready for archive.',
+          'ID verified, billing profile, and preferred vehicle class saved for repeat rentals.',
       completion: 100,
       createdAt: today.subtract(const Duration(days: 5)),
     ),

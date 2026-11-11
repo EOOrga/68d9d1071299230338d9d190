@@ -2,9 +2,9 @@
   "schema_version": 1,
   "applications": {
     "com.taziggg100.besnardchristian": {
-      "title": "BESNARD CHRISTIAN",
-      "short_description": "Track quality checks, equipment, shipments, and compliance records locally.",
-      "full_description": "BESNARD CHRISTIAN helps operations teams keep daily business controls organized without accounts or cloud sync. The app combines quality control checklists, equipment checkout tracking, shipment logs, and compliance reporting in one focused mobile workspace.\n\nCreate local records, assign responsible people, track due windows, update progress, and review status from dashboard and reporting views. Records stay on the device so teams can manage routine operational evidence with a simple, repeatable workflow.",
+      "title": "OTHMAN GOLD CAR",
+      "short_description": "Manage car rental bookings, contracts, vehicle inspections, and customers locally.",
+      "full_description": "OTHMAN GOLD CAR helps car rental teams keep daily operations organized without accounts or cloud sync. The app combines reservation management, rental contract tracking, vehicle check-in/check-out inspection checklists, and customer records in one focused mobile workspace.\n\nCreate local records, assign a responsible agent, track pickup and return windows, update progress, and review status from dashboard and reporting views. Records stay on the device so teams can manage the rental fleet with a simple, repeatable workflow.",
       "source_screenshots": [
         "docs/screens/1.png",
         "docs/screens/2.png",

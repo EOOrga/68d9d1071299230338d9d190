@@ -1,11 +1,11 @@
 {
-  "name": "BESNARD CHRISTIAN",
-  "short_name": "BESNARD",
+  "name": "OTHMAN GOLD CAR",
+  "short_name": "OTHMAN GOLD",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#F4F8FB",
-  "theme_color": "#06152E",
-  "description": "Local operations tracking for quality control, equipment, shipments, and compliance.",
+  "background_color": "#F7F4EC",
+  "theme_color": "#15120A",
+  "description": "Local car rental management for bookings, contracts, vehicle inspections, and customers.",
   "icons": [
     {
       "src": "icons/Icon-192.png",

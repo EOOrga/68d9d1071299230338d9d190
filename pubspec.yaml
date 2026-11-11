@@ -1,5 +1,5 @@
 name: besnard_christian
-description: "Local operations control app for quality, equipment, shipments, and compliance."
+description: "Local car rental management app for bookings, contracts, inspections, and customers."
 publish_to: 'none'
 version: 1.0.0+1
 
