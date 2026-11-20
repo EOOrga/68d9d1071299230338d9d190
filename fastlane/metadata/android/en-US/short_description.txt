@@ -1,0 +1,1 @@
+Track quality checks, equipment, shipments, and compliance records locally.
