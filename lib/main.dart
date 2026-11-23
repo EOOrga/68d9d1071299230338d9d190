@@ -390,7 +390,7 @@ class _OperationsShellState extends State<OperationsShell> {
     final record = OperationRecord(
       id: 'record-${now.microsecondsSinceEpoch}',
       type: RecordType.compliance,
-      title: 'Weekly compliance readiness',
+      title: 'BESNARD CHRISTIAN',
       owner: 'Operations lead',
       reference: 'CMP-${now.month}${now.day}',
       status: RecordStatus.inProgress,
